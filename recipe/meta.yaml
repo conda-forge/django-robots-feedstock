@@ -1,5 +1,5 @@
 {% set name = "django-robots" %}
-{% set version = "5.0" %}
+{% set version = "6.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-robots-{{ version }}.tar.gz
-  sha256: f5817975a9e3b082440a81396111d8a6671b54f6aa11349847554bd1beebd959
+  sha256: f86bcc3d16d7d7c2a4e37af6063cb4785f50ae16943f82248b48c9e7ac034f1d
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
