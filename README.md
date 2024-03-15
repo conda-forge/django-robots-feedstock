@@ -144,4 +144,5 @@ Feedstock Maintainers
 =====================
 
 * [@mxr-conda](https://github.com/mxr-conda/)
+* [@rxm7706](https://github.com/rxm7706/)
 
