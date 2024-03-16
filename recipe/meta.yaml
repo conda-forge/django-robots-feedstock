@@ -1,7 +1,6 @@
 {% set name = "django-robots" %}
 {% set version = "6.1" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,18 +10,18 @@ source:
   sha256: f86bcc3d16d7d7c2a4e37af6063cb4785f50ae16943f82248b48c9e7ac034f1d
 
 build:
-  number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 
 requirements:
   host:
-    - pip
-    - python >=3.6
+    - python >=3.8
     - setuptools-scm
+    - pip
   run:
-    - python >=3.6
-    - django >=1.11,<3.0
+    - python >=3.8
+    - django >=2.2,<5.0
 
 
 test:
@@ -43,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
+    - rxm7706
