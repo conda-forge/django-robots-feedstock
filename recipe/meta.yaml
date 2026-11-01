@@ -1,18 +1,18 @@
 {% set name = "django-robots" %}
-{% set version = "6.1" %}
+{% set version = "7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-robots-{{ version }}.tar.gz
-  sha256: f86bcc3d16d7d7c2a4e37af6063cb4785f50ae16943f82248b48c9e7ac034f1d
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: efe3cd1d97768aa2ac24cb50ffa0f3c0c380024d442f64bd834f46228f0aab7b
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 2
+  number: 0
 
 requirements:
   host:
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - django >=2.2,<5.0
+    - django >=5.2
 
 
 test:
